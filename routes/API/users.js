@@ -19,14 +19,11 @@ router.post("/", (req, res) => {
     name: req.body.name,
     email: req.body.email,
   };
-  
-  if (!newUser.name || !newUser.email) { 
+  if (!newUser.name || !newUser.email) {
     return res.sendStatus(400);
   }
-
   users.push(newUser);
   res.json(users);
 });
-
 
 module.exports = router;

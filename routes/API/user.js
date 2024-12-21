@@ -17,25 +17,46 @@ router.get("/:id", (req, res) => {
   }
 });
 
-// Create a new user
 router.post("/", (req, res) => {
   const { name, email } = req.body;
 
-  // Check if name or email is missing
   if (!name || !email) {
-    return res.sendStatus(400); // Bad Request if name or email is missing
+    return res.sendStatus(400);
   }
 
   const newUser = {
-    id: uuid.v4(), // Generate a new unique ID
+    id: uuid.v4(),
     name: name,
-    email: email
+    email: email,
   };
 
-  users.push(newUser); // Add the new user to the list
+  users.push(newUser);
 
-  // Respond with the created user and a 201 status code (Created)
   res.status(201).json(newUser);
 });
+router.put('/:id', (req, res) => {
+
+  const found = users.some(user => user.id === parseInt(req.params.id));
+
+  if (found) {
+  
+    const update = req.body;
+
+   
+    users.forEach(user => {
+      if (user.id === parseInt(req.params.id)) {
+        user.name = update.name ? update.name : user.name;
+        user.email = update.email ? update.email : user.email;
+        
+       
+        return res.json({ msg: 'User updated successfully', user });
+      }
+    });
+  } else {
+   
+    res.status(404).json({ msg: 'User not found' });
+  }
+});
+
 
 module.exports = router;

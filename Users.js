@@ -14,6 +14,11 @@ const users = [
       name: 'Romeo',
       email: 'crish@gmail.com',
     },
+    {
+      id: 4,
+      name: 'Samba',
+      email: 'samba@gmail.com',
+    },
   ];
   
   module.exports = users;

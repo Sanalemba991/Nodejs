@@ -12,22 +12,23 @@
 // app.post("/postRequest", (req, res) => {
 //   res.send("hello this is successfull post request");
 // });
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-const reqFilter = (reqobject, resobject, next) => {
-  console.log("reqFilter");
-  next();
-};
-app.use(reqFilter);
+// const reqFilter = (reqobject, resobject, next) => {
+//   console.log("reqFilter");
+//   next();
+// };
+// app.use(reqFilter);
 
-app.get("/", (req, res) => {
-  res.send("Hello, it was a successful GET request");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, it was a successful GET request");
+// });
 
-app.get("/home", (req, res) => {
-  res.send("Hello, it was a successful GET request home page");
-});
-app.listen(5000, () => {
-  console.log("listening on port number 5000");
-});
+// app.get("/home", (req, res) => {
+//   res.send("Hello, it was a successful GET request home page");
+// });
+// app.listen(5000, () => {
+//   console.log("listening on port number 5000");
+// });
+ 

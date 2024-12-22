@@ -31,4 +31,27 @@
 // app.listen(5000, () => {
 //   console.log("listening on port number 5000");
 // });
- 
+//morgan happ alhotpa
+// const express = require("express");
+// const module = require ("morgan");
+// const createError = require("http-errors");
+// require(`dotenv`).config;
+
+// const app = express();
+// const PORT = process.env.PORT || 3000;
+
+// app.listen(PORT, () => {
+//   console.log(`listening on port number ${PORT}`);
+// });
+
+const express=require('express');
+const app=express();
+const PORT=4000;
+app.listen(
+    PORT,()=>{
+        console.log(`listen to the PORT ${PORT}`);
+    }
+)
+
+
+

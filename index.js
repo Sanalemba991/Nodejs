@@ -31,16 +31,17 @@ app.post("/movie", (req, res) => {
   res.send("Movie is added to the List of Movie");
 });
 
-app.get("/movie/:id",(req,res)=>{
-    const id=req.params.id
-    for (let movie of movies){
-        if(movie.id ==id){
-            res.json(movie)
-            return
-        }
+app.get("/movie/:id", (req, res) => {
+  const id = req.params.id;
+  for (let movie of movies) {
+    if (movie.id == id) {
+      res.json(movie);
+      return;
     }
-    res.status(404).json({message:"Movie not found"})
-})
+  }
+  res.status(404).json({ message: "Movie not found" });
+});
+
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });

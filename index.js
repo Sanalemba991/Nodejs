@@ -41,6 +41,17 @@ app.get("/movie/:id", (req, res) => {
   }
   res.status(404).json({ message: "Movie not found" });
 });
+app.delete("/movie/:id", (req, res) => {
+    const id = req.params.id;
+    movies = movies.filter((movie) => {
+      if (movie.id != id) {  // Use != for type coercion comparison
+        return true;
+      }
+      return false;
+    });
+    res.send("Movie is deleted");
+  });
+  
 
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
